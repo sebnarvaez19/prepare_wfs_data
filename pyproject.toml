@@ -1,6 +1,6 @@
 [project]
 name = "prepare-wfs-data"
-version = "0.1.0"
+version = "0.1.1"
 description = "Prepare data from OroraTech Wildfire Solutions to be uploaded to Risk Management API"
 authors = [
     {name = "Sebástian Andrés Narváez Salcedo",email = "snarvaezwrm@gmail.com"}
@@ -8,11 +8,11 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "contextily (>=1.7.1,<2.0.0)",
-    "geopandas (>=1.1.4,<2.0.0)",
-    "matplotlib (>=3.11.1,<4.0.0)",
-    "pandas (>=3.0.5,<4.0.0)",
-    "requests (>=2.34.2,<3.0.0)"
+    "contextily (>=1.7.1)",
+    "geopandas (>=1.1.4)",
+    "matplotlib (>=3.11.1)",
+    "pandas (>=3.0.5)",
+    "requests (>=2.34.2)"
 ]
 
 [tool.poetry]
@@ -21,3 +21,8 @@ packages = [{include = "prepare_wfs_data", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "jupyterlab (>=4.6.2)"
+]
