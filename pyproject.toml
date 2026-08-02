@@ -1,0 +1,18 @@
+[project]
+name = "prepare-wfs-data"
+version = "0.1.0"
+description = "Prepare data from OroraTech Wildfire Solutions to be uploaded to Risk Management API"
+authors = [
+    {name = "Sebástian Andrés Narváez Salcedo",email = "snarvaezwrm@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "prepare_wfs_data", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
