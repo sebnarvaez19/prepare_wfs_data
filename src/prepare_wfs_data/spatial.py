@@ -43,4 +43,8 @@ def intersect_municipalities(gdf: gpd.GeoDataFrame, crs: str = "EPSG:9377") -> g
     municipalities = load_municipalities().to_crs(crs)
     municipalities.index.name = "municipality_id"
     municipalities = municipalities.drop(columns=["name"])
-    return gdf.sjoin(municipalities, how="inner", predicate="intersects")
+    geometry = gdf.geometry.copy()
+    gdf.geometry = gdf.geometry.centroid
+    result = gdf.sjoin(municipalities, how="inner", predicate="intersects")
+    result.geometry = geometry
+    return result
